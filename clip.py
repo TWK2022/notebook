@@ -12,10 +12,10 @@ print(model_list)
 # 模型
 model_name = 'ViT-L/14'  # 有多种型号，但中文文本模型只支持ViT-L/14(890M)
 device = "cuda" if torch.cuda.is_available() else "cpu"
-model, image_deal = clip.load(model_name, device=device)
+model, image_deal = clip.load(model_name, device=device)  # clip模型：图片模型+英文文本模型
 chinese_encode = transformers.BertForSequenceClassification.from_pretrained(
-    "IDEA-CCNL/Taiyi-CLIP-Roberta-large-326M-Chinese").eval().half().to(device)  # 中文语言特征提取模型，只支持ViT-L/14(890M)
-print(f'| 加载模型成功:{model_name} | 中文特征模型:IDEA-CCNL/Taiyi-CLIP-Roberta-large-326M-Chinese |')
+    "IDEA-CCNL/Taiyi-CLIP-Roberta-large-326M-Chinese").eval().half().to(device)  # 中文文本模型，只支持ViT-L/14(890M)
+print(f'| 加载模型成功:{model_name} | 中文文本模型:IDEA-CCNL/Taiyi-CLIP-Roberta-large-326M-Chinese |')
 # 图片处理
 a = image_deal(PIL.Image.open("image/01.jpg"))
 b = image_deal(PIL.Image.open("image/02.jpg"))
