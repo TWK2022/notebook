@@ -1,3 +1,5 @@
+# 官方项目：https://github.com/openai/CLIP
+# 中文文本模型：https://huggingface.co/IDEA-CCNL/Taiyi-CLIP-Roberta-large-326M-Chinese
 # 2021年openai发布的模型，用于将图片和文字描述匹配
 # 相当于1个图片分类模型与1个文本分类模型相结合，两个模型的标签一致，只是标签并非独热编码而是一段特征向量
 # 因此一张图片经过图片分类模型得到的特征向量和这张图片的描述经过文本模型得到的特征向量相近，从而能够通过图片找文本，也可以通过文本找图片
