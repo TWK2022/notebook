@@ -9,6 +9,7 @@ import PIL
 import clip
 import torch
 import transformers
+import numpy as np
 
 model_list = clip.available_models()
 print(model_list)
@@ -22,6 +23,7 @@ print(f'| 加载模型成功:{model_name} | 中文文本模型:IDEA-CCNL/Taiyi-C
 # 图片处理
 image_path = 'image'
 image_name = os.listdir(image_path)
+print(f'| 图片:{image_name} |')
 image_list = []
 for i in range(len(image_name)):
     image = image_deal(PIL.Image.open(f'{image_path}/{image_name[i]}'))
@@ -29,8 +31,8 @@ for i in range(len(image_name)):
 image_bacth = torch.stack(image_list, dim=0).to(device)
 print(f'| image_bacth.shape:{image_bacth.shape},{image_bacth.dtype} |')
 # 文本处理
-english_text = ['car', 'dog', 'cat', 'a cat']
-chinese_text = ['车', '狗', '猫', '一只猫']
+english_text = ['a car']
+chinese_text = ['一辆车']
 # 英文
 english_text = clip.tokenize(english_text).to(device)
 print(f'| english_text.shape:{english_text.shape},{english_text.dtype} |')
@@ -43,7 +45,9 @@ print(f'| chinese_text.shape:{chinese_text.shape},{chinese_text.dtype} |')
 with torch.no_grad():
     model = model.eval()
     # 图片特征
+    print(model.logit_scale.exp())
     image_feature = model.encode_image(image_bacth)
+    image_feature /= torch.norm(image_feature, dim=1, keepdim=True)
     print(f'| image_feature.shape:{image_feature.shape},{image_feature.dtype} |')
     # 英文文本特征
     english_text_feature = model.encode_text(english_text)
@@ -52,10 +56,10 @@ with torch.no_grad():
     chinese_text_feature = chinese_encode(chinese_text).logits
     print(f'| chinese_text_feature.shape:{chinese_text_feature.shape},{chinese_text_feature.dtype} |')
     # 图片和英文文本匹配
-    score = (image_feature @ english_text_feature.t())
-    score = torch.softmax(score, dim=1)
-    [print(f"score(英文):{image_name[_]}:{score[_]}") for _ in range(len(score))]
+    english_text_feature /= torch.norm(english_text_feature, dim=1, keepdim=True)
+    score = (100.0 * english_text_feature @ image_feature.t()).softmax(dim=1)
+    print(f'英文:{score}')
     # 图片和中文文本匹配
-    score = (image_feature @ chinese_text_feature.t())
-    score = torch.softmax(score, dim=1)
-    [print(f"score(中文):{image_name[_]}:{score[_]}") for _ in range(len(score))]
+    chinese_text_feature /= torch.norm(chinese_text_feature, dim=1, keepdim=True)
+    score = (100.0 * chinese_text_feature @ image_feature.t()).softmax(dim=1)
+    print(f'中文:{score}')
