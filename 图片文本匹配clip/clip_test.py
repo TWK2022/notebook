@@ -45,7 +45,6 @@ print(f'| chinese_text.shape:{chinese_text.shape},{chinese_text.dtype} |')
 with torch.no_grad():
     model = model.eval()
     # 图片特征
-    print(model.logit_scale.exp())
     image_feature = model.encode_image(image_bacth)
     image_feature /= torch.norm(image_feature, dim=1, keepdim=True)
     print(f'| image_feature.shape:{image_feature.shape},{image_feature.dtype} |')
