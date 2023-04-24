@@ -4,6 +4,7 @@
 # 相当于1个图片分类模型与1个文本分类模型相结合，两个模型的标签一致，只是标签并非独热编码而是一段特征向量
 # 因此一张图片经过图片模型得到的特征向量和这张图片的描述经过文本模型得到的特征向量相近，从而能够通过图片找文本，也可以通过文本找图片
 # 原clip官方文本模型只支持英文，国内有人训练了中文的文本模型，只支持ViT-L/14(890M)
+import os
 import PIL
 import clip
 import torch
@@ -19,13 +20,17 @@ chinese_encode = transformers.BertForSequenceClassification.from_pretrained(
     "IDEA-CCNL/Taiyi-CLIP-Roberta-large-326M-Chinese").eval().half().to(device)  # 中文文本模型，只支持ViT-L/14(890M)
 print(f'| 加载模型成功:{model_name} | 中文文本模型:IDEA-CCNL/Taiyi-CLIP-Roberta-large-326M-Chinese |')
 # 图片处理
-a = image_deal(PIL.Image.open("image/01.jpg"))
-b = image_deal(PIL.Image.open("image/02.jpg"))
-image_bacth = torch.stack([a, b], dim=0).to(device)
+image_path = 'image'
+image_name = os.listdir(image_path)
+image_list = []
+for i in range(len(image_name)):
+    image = image_deal(PIL.Image.open(f'{image_path}/{image_name[i]}'))
+    image_list.append(image)
+image_bacth = torch.stack(image_list, dim=0).to(device)
 print(f'| image_bacth.shape:{image_bacth.shape},{image_bacth.dtype} |')
 # 文本处理
-english_text = ['car', 'cat', 'a cat']
-chinese_text = ['车', '猫', '一只猫']
+english_text = ['car', 'dog', 'cat', 'a cat']
+chinese_text = ['车', '狗', '猫', '一只猫']
 # 英文
 english_text = clip.tokenize(english_text).to(device)
 print(f'| english_text.shape:{english_text.shape},{english_text.dtype} |')
@@ -49,8 +54,8 @@ with torch.no_grad():
     # 图片和英文文本匹配
     score = (image_feature @ english_text_feature.t())
     score = torch.softmax(score, dim=1)
-    print("score(英文):", score)
+    [print(f"score(英文):{image_name[_]}:{score[_]}") for _ in range(len(score))]
     # 图片和中文文本匹配
     score = (image_feature @ chinese_text_feature.t())
     score = torch.softmax(score, dim=1)
-    print("score(中文):", score)
+    [print(f"score(中文):{image_name[_]}:{score[_]}") for _ in range(len(score))]
