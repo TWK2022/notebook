@@ -31,8 +31,8 @@ for i in range(len(image_name)):
 image_bacth = torch.stack(image_list, dim=0).to(device)
 print(f'| image_bacth.shape:{image_bacth.shape},{image_bacth.dtype} |')
 # 文本处理
-english_text = ['a car']
-chinese_text = ['一辆车']
+english_text = ['cat', 'a cat']
+chinese_text = ['猫', '一只猫']
 # 英文
 english_text = clip.tokenize(english_text).to(device)
 print(f'| english_text.shape:{english_text.shape},{english_text.dtype} |')
