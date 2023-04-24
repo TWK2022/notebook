@@ -58,9 +58,9 @@ with torch.no_grad():
     english_text_feature /= torch.norm(english_text_feature, dim=1, keepdim=True)
     score = (100.0 * english_text_feature @ image_feature.t()).softmax(dim=1)
     score = [[round(__.item(), 2) for __ in _] for _ in score]
-    [print(f'英文:{_}') for _ in score]
+    [print(f'英文:{_}\n') for _ in score]
     # 图片和中文文本匹配
     chinese_text_feature /= torch.norm(chinese_text_feature, dim=1, keepdim=True)
     score = (100.0 * chinese_text_feature @ image_feature.t()).softmax(dim=1)
     score = [[round(__.item(), 2) for __ in _] for _ in score]
-    [print(f'中文:{_}') for _ in score]
+    [print(f'中文:{_}\n') for _ in score]
