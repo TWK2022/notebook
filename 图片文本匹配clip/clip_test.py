@@ -22,7 +22,7 @@ chinese_encode = transformers.BertForSequenceClassification.from_pretrained(
 print(f'| 加载模型成功:{model_name} | 中文文本模型:IDEA-CCNL/Taiyi-CLIP-Roberta-large-326M-Chinese |')
 # 图片处理
 image_path = 'image'
-image_name = os.listdir(image_path)
+image_name = sorted(os.listdir(image_path))
 print(f'| 图片:{image_name} |')
 image_list = []
 for i in range(len(image_name)):
