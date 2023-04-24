@@ -34,13 +34,13 @@ print(f'| image_bacth.shape:{image_bacth.shape},{image_bacth.dtype} |')
 english_text = ['cat', 'a cat']
 chinese_text = ['猫', '一只猫']
 # 英文
-english_text = clip.tokenize(english_text).to(device)
-print(f'| english_text.shape:{english_text.shape},{english_text.dtype} |')
+english_sequence = clip.tokenize(english_text).to(device)
+print(f'| english_sequence.shape:{english_sequence.shape},{english_sequence.dtype} |')
 # 中文
 chinese_tokenizer = transformers.BertTokenizer.from_pretrained("IDEA-CCNL/Taiyi-CLIP-Roberta-large-326M-Chinese")
-chinese_text = chinese_tokenizer(chinese_text, max_length=77, padding='max_length', truncation=True,
-                                 return_tensors='pt')['input_ids'].type(torch.int32).to(device)
-print(f'| chinese_text.shape:{chinese_text.shape},{chinese_text.dtype} |')
+chinese_sequence = chinese_tokenizer(chinese_text, max_length=77, padding='max_length', truncation=True,
+                                     return_tensors='pt')['input_ids'].type(torch.int32).to(device)
+print(f'| chinese_sequence.shape:{chinese_sequence.shape},{chinese_sequence.dtype} |')
 # 推理
 with torch.no_grad():
     model = model.eval()
@@ -49,18 +49,18 @@ with torch.no_grad():
     image_feature /= torch.norm(image_feature, dim=1, keepdim=True)
     print(f'| image_feature.shape:{image_feature.shape},{image_feature.dtype} |')
     # 英文文本特征
-    english_text_feature = model.encode_text(english_text)
+    english_text_feature = model.encode_text(english_sequence)
     print(f'| english_text_feature.shape:{english_text_feature.shape},{english_text_feature.dtype} |')
     # 中文文本特征
-    chinese_text_feature = chinese_encode(chinese_text).logits
+    chinese_text_feature = chinese_encode(chinese_sequence).logits
     print(f'| chinese_text_feature.shape:{chinese_text_feature.shape},{chinese_text_feature.dtype} |')
     # 图片和英文文本匹配
     english_text_feature /= torch.norm(english_text_feature, dim=1, keepdim=True)
     score = (100.0 * english_text_feature @ image_feature.t()).softmax(dim=1)
     score = [[round(__.item(), 2) for __ in _] for _ in score]
-    [print(f'英文:{_}') for _ in score]
+    [print(f'英文模型:{english_text[_]}:{score[_]}') for _ in range(len(score))]
     # 图片和中文文本匹配
     chinese_text_feature /= torch.norm(chinese_text_feature, dim=1, keepdim=True)
     score = (100.0 * chinese_text_feature @ image_feature.t()).softmax(dim=1)
     score = [[round(__.item(), 2) for __ in _] for _ in score]
-    [print(f'中文:{_}') for _ in score]
+    [print(f'中文模型:{chinese_text[_]}:{score[_]}') for _ in range(len(score))]
