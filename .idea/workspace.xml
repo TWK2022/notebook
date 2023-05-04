@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ce6ccf5-2562-41c2-a0eb-9161e2f77b9a" name="默认更改列表" comment="" />
+    <list default="true" id="2ce6ccf5-2562-41c2-a0eb-9161e2f77b9a" name="默认更改列表" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +28,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../clip" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -76,6 +78,8 @@
       <workItem from="1682475232922" duration="5530000" />
       <workItem from="1682502512416" duration="1575000" />
       <workItem from="1683167927274" duration="116000" />
+      <workItem from="1683168044647" duration="27000" />
+      <workItem from="1683170457840" duration="17000" />
     </task>
     <servers />
   </component>
@@ -83,11 +87,11 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="686" y="206" key="FileChooserDialogImpl" timestamp="1683168042215">
+    <state x="686" y="206" key="FileChooserDialogImpl" timestamp="1683170472912">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1680158113451" />
-    <state x="686" y="206" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1683168042215" />
+    <state x="686" y="206" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1683170472912" />
     <state x="461" y="160" key="SettingsEditor" timestamp="1682316357024">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
