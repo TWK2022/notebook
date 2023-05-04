@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ce6ccf5-2562-41c2-a0eb-9161e2f77b9a" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/图片文本匹配clip/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/图片文本匹配clip/predict.py" afterDir="false" />
-    </list>
+    <list default="true" id="2ce6ccf5-2562-41c2-a0eb-9161e2f77b9a" name="默认更改列表" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,21 +26,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../insightface" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\twk10\PythonFile\github\notebook\笔记" />
-      <recent name="C:\Users\twk10\PythonFile\github\notebook\图片描述生成clip" />
-      <recent name="C:\Users\twk10\PythonFile\github\notebook" />
-      <recent name="C:\Users\twk10\PythonFile\github\notebook\学习笔记" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\twk10\PythonFile\github\notebook" />
       <recent name="C:\Users\twk10\PythonFile\github\notebook\笔记" />
       <recent name="C:\Users\twk10\PythonFile\github\notebook\图像描述生成clip" />
       <recent name="C:\Users\twk10\PythonFile\github\notebook\图片描述生成clip" />
+      <recent name="C:\Users\twk10\PythonFile\github\notebook\学习笔记" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\twk10\PythonFile\github\notebook" />
+      <recent name="C:\Users\twk10\PythonFile\github\notebook\笔记" />
+      <recent name="C:\Users\twk10\PythonFile\github\notebook\图片描述生成clip" />
       <recent name="C:\Users\twk10\PythonFile\github\notebook\学习笔记" />
     </key>
   </component>
@@ -78,6 +75,7 @@
       <workItem from="1682474950756" duration="267000" />
       <workItem from="1682475232922" duration="5530000" />
       <workItem from="1682502512416" duration="1575000" />
+      <workItem from="1683167927274" duration="116000" />
     </task>
     <servers />
   </component>
@@ -85,11 +83,11 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="686" y="206" key="FileChooserDialogImpl" timestamp="1682505230771">
+    <state x="686" y="206" key="FileChooserDialogImpl" timestamp="1683168042215">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1680158113451" />
-    <state x="686" y="206" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1682505230771" />
+    <state x="686" y="206" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1683168042215" />
     <state x="461" y="160" key="SettingsEditor" timestamp="1682316357024">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
