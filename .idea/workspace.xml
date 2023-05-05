@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2ce6ccf5-2562-41c2-a0eb-9161e2f77b9a" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python3.docx" beforeDir="false" afterPath="$PROJECT_DIR$/python3.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/理论.docx" beforeDir="false" afterPath="$PROJECT_DIR$/理论.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,20 +30,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../clip" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\twk10\PythonFile\github\notebook" />
+      <recent name="C:\Users\twk10\PythonFile\github\notebook\笔记" />
+      <recent name="C:\Users\twk10\PythonFile\github\notebook\图片描述生成clip" />
+      <recent name="C:\Users\twk10\PythonFile\github\notebook\学习笔记" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\twk10\PythonFile\github\notebook" />
       <recent name="C:\Users\twk10\PythonFile\github\notebook\笔记" />
       <recent name="C:\Users\twk10\PythonFile\github\notebook\图像描述生成clip" />
-      <recent name="C:\Users\twk10\PythonFile\github\notebook\图片描述生成clip" />
-      <recent name="C:\Users\twk10\PythonFile\github\notebook\学习笔记" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\twk10\PythonFile\github\notebook" />
-      <recent name="C:\Users\twk10\PythonFile\github\notebook\笔记" />
       <recent name="C:\Users\twk10\PythonFile\github\notebook\图片描述生成clip" />
       <recent name="C:\Users\twk10\PythonFile\github\notebook\学习笔记" />
     </key>
@@ -80,6 +82,7 @@
       <workItem from="1683167927274" duration="116000" />
       <workItem from="1683168044647" duration="27000" />
       <workItem from="1683170457840" duration="17000" />
+      <workItem from="1683189228778" duration="32000" />
     </task>
     <servers />
   </component>
